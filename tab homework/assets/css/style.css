@@ -1,0 +1,54 @@
+:root{
+  --border-size:1px;
+  --border-style:solid;
+  --border-color:0.5;
+}
+table{
+  width: 100%;
+  border-spacing: 0px;
+  border-radius: 20px;
+  border: var(--border-size) var(--border-style) var(--border-color);
+  overflow: hidden;
+  text-align: center;
+
+
+}
+th{
+  text-align: center;
+  color: white;
+  background-color: #7979a8  ;
+}
+th + th,td + td{
+  border-left:var(--border-size) var(--border-style) var( --border-color);
+  
+}
+th, td{
+  border-bottom: var(--border-size) var(--border-style) var(--border-color) ;
+}
+tr:last-child td{
+  border-bottom: unset;
+  
+}
+td:first-child{
+  text-align: left;
+}
+tr:nth-of-type(2n+1) td:nth-child(2n+1){
+  background-color: #dbdbdb;
+}
+tr:nth-of-type(2n+1)>td:nth-child(2n){
+  background-color: #e7e7e7;
+}
+td:nth-child(2n+1){
+  background-color: #f3f3f3;
+}
+/* td:nth-of-type(2n+1){
+    background-color: #e7e7e7;
+} */
+tfoot{
+  text-align: center;
+  background-color: #dddddd;
+}
+button{ 
+  border: var(--border-size) var(--border-style) var(--border-color);
+  padding: 15px 30px;
+}
