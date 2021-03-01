@@ -1,4 +1,8 @@
 :root{
+  --table-head-color:0,0,105;
+  --primary-table-color:#dbdbdb;
+  --primari-table-color-light-variant:#f3f3f3;
+  --primari-table-color-dark-variant:#e7e7e7;
   --border-size:1px;
   --border-style:solid;
   --border-color:0.5;
@@ -9,16 +13,50 @@ table{
   border-radius: 20px;
   border: var(--border-size) var(--border-style) var(--border-color);
   overflow: hidden;
-  text-align: center;
+  /* text-align: center; */
 
 
 }
-th{
+thead >tr> th{
+  padding:10px 20px;
   text-align: center;
   color: white;
   background-color: #7979a8  ;
 }
-th + th,td + td{
+thead >tr> th:nth-child(1){
+  background-color: rgba(var( --table-head-color),0.2);
+}
+thead >tr> th:nth-child(2){
+  background-color: rgba(var( --table-head-color),0.4);
+}
+thead >tr> th:nth-child(3){
+  background-color: rgba(var( --table-head-color),0.6);
+}
+thead >tr> th:nth-child(4){
+  background-color: rgba(var( --table-head-color),0.8);
+}
+thead >tr> th:nth-child(5){
+  background-color: rgba(var( --table-head-color));
+}
+tbody td{
+  padding: 10px 15px;
+}
+tbody>tr:nth-child(2n+1)>td:nth-child(2n+1){
+  background-color: var(--primary-table-color);
+}
+tbody>tr:nth-child(2n)>td:nth-child(2n+1){
+  background-color: var(--primari-table-color-light-variant);
+}
+tbody > tr:nth-child(2n+1)>td:nth-child(2n){
+  background-color: var(--primari-table-color-dark-variant);
+}
+tfoot{
+  background-color: var(--primary-table-color);
+}
+tbody td + td{
+  text-align: center;
+}
+/* th + th,td + td{
   border-left:var(--border-size) var(--border-style) var( --border-color);
   
 }
@@ -32,23 +70,26 @@ tr:last-child td{
 td:first-child{
   text-align: left;
 }
-tr:nth-of-type(2n+1) td:nth-child(2n+1){
-  background-color: #dbdbdb;
+tbody>tr:nth-child(2n+1) td:nth-child(2n+1){
+  background-color: var();
 }
-tr:nth-of-type(2n+1)>td:nth-child(2n){
+tbody>tr:nth-of-type(2n+1)>td:nth-child(2n){
   background-color: #e7e7e7;
 }
-td:nth-child(2n+1){
+tbody>td:nth-child(2n){
   background-color: #f3f3f3;
 }
 /* td:nth-of-type(2n+1){
     background-color: #e7e7e7;
 } */
-tfoot{
+/* tfoot>tr:last-child{
+  background-color: #dddddd; */
+/* } */
+/* tfoot{
   text-align: center;
-  background-color: #dddddd;
-}
-button{ 
+  background-color: #dddddd; */
+/* } */
+/* button{ 
   border: var(--border-size) var(--border-style) var(--border-color);
   padding: 15px 30px;
-}
+}  */
